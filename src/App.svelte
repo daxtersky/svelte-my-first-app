@@ -1,5 +1,7 @@
 <script>
 	import Child from "./Child.svelte";
+	import Button from './Button.svelte';
+
 	export let name;
 	let color = "#ff3e00";
 	let variable = "placeholder";
@@ -54,6 +56,7 @@
 	<input bind:value={variable} />
 	<p>Double binded variable: <strong>{variable}</strong></p>
 	<button on:click={changeColor}>Get random color</button>
+	<button on:click={changeColor}>Get random color</button>
 	<p style="color: {color}">Watcher / reactive value: {watcher}</p>
 	<button on:click={showText}>Toggle visibility</button>
 	{#if toggleText}
@@ -76,6 +79,13 @@
 	{/each}
 	<hr />
 	<Child prop1={variable} {color} on:emit-event={receiveEventFromChild} />
+	<hr />
+	<p>Scoped components</p>
+	<Button>One</Button>
+	<Button style='secondary'>Two</Button>
+	<Button disabled>Three</Button>
+
+
 </main>
 
 <style>
