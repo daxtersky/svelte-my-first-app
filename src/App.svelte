@@ -56,7 +56,6 @@
 	<input bind:value={variable} />
 	<p>Double binded variable: <strong>{variable}</strong></p>
 	<button on:click={changeColor}>Get random color</button>
-	<button on:click={changeColor}>Get random color</button>
 	<p style="color: {color}">Watcher / reactive value: {watcher}</p>
 	<button on:click={showText}>Toggle visibility</button>
 	{#if toggleText}
